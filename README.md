@@ -64,7 +64,7 @@ while (h >=1){
 1. One of the first divide and conquer type of algortihm.
 2. Uses recursion
 3. Input is continously split into smaller individual elements that are sorted and merged back in.
-
+```
 sort(array, lo, hi){
     int mid = lo + (hi-lo)/2;
     sort(array,lo,mid);
@@ -96,3 +96,4 @@ merge (array, lo, mid, hi){
         }
     }
 }
+```
