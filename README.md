@@ -47,7 +47,7 @@ while (h < size/3){
     h = 3*h + 1;
 }
 while (h >=1){
-    for (int i=h i<size;i++){
+    for (int i=h; i<size;i++){
         int j =i;
         while(j< size){
             if(array[j]>array[j-i]){
@@ -65,3 +65,34 @@ while (h >=1){
 2. Uses recursion
 3. Input is continously split into smaller individual elements that are sorted and merged back in.
 
+sort(array, lo, hi){
+    int mid = lo + (hi-lo)/2;
+    sort(array,lo,mid);
+    sort(array,mid+1,hi);
+    merge(array, lo, mid, hi);
+}
+
+merge (array, lo, mid, hi){
+    int i = lo;
+    int j = mid+1;
+    for(int i =0; i<array.length; i++){
+        array1[i] = array[i];
+    }
+    for(int k=lo; k<hi; k++){
+        if(j>hi){
+            array[k] = array1[i];
+            i++;
+        }
+        if(i>mid){
+            array[k] = array1[j];
+            j++;
+        }
+        if(array1[i] < array1[j]){
+            array[k] = array1[i];
+            i++;
+        } else{
+            array[k] = array1[j];
+            j++;
+        }
+    }
+}
