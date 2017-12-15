@@ -97,3 +97,58 @@ merge (array, lo, mid, hi){
     }
 }
 ```
+## Priority Queue
+1. In priority queue,the data is arranged in a binary tree such that the root is at poisting k, left node of the element is set at 2k value and right node is set to 2k+1 value.
+2. Thus when we are moving up the tree, we are setting the value of k to k/2 and while moving down we are setting it to 2k or 2k+1.
+3. A binary tree is heap-ordered if the the key[k] ineachnodeis larger than or equalto the keys in that node's two children.
+
+When a new element is being inserted in the priority queue:
+```
+int[] pq = new int[];
+int  n = 0;
+public void insert(int k){
+    pg[++n] = k;
+    swim(n);
+}
+
+public void swim(n){
+    int k = n;
+    if(n==1){
+        return;
+    }else{
+       while(k>1){
+           if(pq[k]>pq[k/2]){
+               exchange(pq[k],pq[k/2]);
+           }
+           k=k/2;
+       }
+    }
+}
+
+public void del(){
+    
+    int max = pq[1];
+    exchange(1,n--);
+    pq[n+1] = null;
+    sink(1);
+    return max;
+}
+
+public void sink(n){
+    int k =n; 
+    while(2k < n){
+        j = 2k;
+        if(j<n && (pq[j] > pq[j+1])
+            j++;
+        if(pq[k] < pq[j]){
+            exchange(k,j);
+            k=j;
+        }            
+    }    
+}
+```
+## Binary Search Tree[BST]
+A binary search tree is a binary tree where each node has a value and satisfies the restriction that each node is larger than the keys in the left sub tree and less than keys in right sub tree.
+
+Each node in BST contains a key, value, link to left node, link to right node and node count.
+
